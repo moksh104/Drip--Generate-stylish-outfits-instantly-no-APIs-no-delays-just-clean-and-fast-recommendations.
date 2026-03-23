@@ -1,0 +1,58 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="lux-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1a1a" />
+      <stop offset="100%" stop-color="#0a0a0a" />
+    </radialGradient>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF2A8" />
+      <stop offset="25%" stop-color="#FFD700" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="75%" stop-color="#AA8822" />
+      <stop offset="100%" stop-color="#D4AF37" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="120" fill="url(#lux-bg)" />
+  <rect width="512" height="512" rx="120" fill="transparent" stroke="url(#gold-grad)" stroke-width="4" opacity="0.3" />
+  
+  <!-- Outer Rings -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="url(#gold-grad)" stroke-width="8" opacity="0.15" />
+  <circle cx="256" cy="256" r="160" fill="none" stroke="url(#gold-grad)" stroke-width="2" opacity="0.3" stroke-dasharray="10 10"/>
+  
+  <!-- Drip Drop Outer Shape -->
+  <path 
+    d="M 256 90 C 256 90 140 220 140 310 C 140 374 192 426 256 426 C 320 426 372 374 372 310 C 372 220 256 90 256 90 Z" 
+    fill="none" 
+    stroke="url(#gold-grad)"
+    stroke-width="14"
+    filter="url(#glow)"
+  />
+  
+  <!-- Inner D Logo Inside the Drop -->
+  <path 
+    d="M 220 210 L 220 370 Q 320 370 320 290 Q 320 210 220 210 Z" 
+    fill="none" 
+    stroke="url(#gold-grad)"
+    stroke-width="12"
+  />
+  <rect x="234" y="210" width="12" height="160" fill="url(#gold-grad)" />
+  
+  <!-- Sparkles -->
+  <path
+    d="M 330 160 Q 350 160 350 140 Q 350 160 370 160 Q 350 160 350 180 Q 350 160 330 160 Z"
+    fill="url(#gold-grad)"
+  />
+  <path
+    d="M 130 200 Q 140 200 140 190 Q 140 200 150 200 Q 140 200 140 210 Q 140 200 130 200 Z"
+    fill="url(#gold-grad)"
+  />
+</svg>
